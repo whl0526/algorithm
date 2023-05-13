@@ -6,15 +6,11 @@ n = list(map(int, input().split()))
 _ = int(input())
 m = list(map(int, input().split()))
 
-new_list = {}
-for i in n:
-    if i in new_list:
-        new_list[i] += 1
-    else:
-        new_list[i] = 1
+count_dict = {}
 
-for i in m:
-    if i in new_list:
-        print(new_list[i], end=' ')
-    else:
-        print(0, end=' ')
+# n 리스트의 요소를 카운트하여 딕셔너리에 저장
+for num in n:
+    count_dict[num] = count_dict.get(num, 0) + 1
+
+# m 리스트의 각 요소에 대해 count_dict에서 값을 찾아 출력
+print(' '.join(str(count_dict.get(num, 0)) for num in m))
