@@ -5,7 +5,7 @@ n = int(input())
 dance = {'ChongChong'}
 
 for i in range(1, n+1):
-    a, b = input().rstrip().split()
+    a, b = input().split()
 
     if a in dance:
         dance.add(b)
