@@ -1,5 +1,14 @@
+document = input()
 word = input()
-small = input()
-sp_word = word.split(small)
 
-print(len(sp_word) - 1)
+index = 0
+count = 0
+
+while index <= len (document) - len(word):
+    if document[index:index + len(word)] == word:
+        count += 1
+        index += len(word)
+    else:
+        index += 1
+        
+print(count)        
