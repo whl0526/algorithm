@@ -8,7 +8,8 @@ s = []
 def backtracking(start):
     if len(s) == M:
         print(' '.join(map(str,s)))
-        return 
+        return
+    
     for i in range(start, N+ 1):
         if i not in s:
             s.append(i)
