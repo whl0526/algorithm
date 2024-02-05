@@ -1,12 +1,22 @@
+import sys
+
+input = sys.stdin.readline
+
+
+def fib(n):
+    return n - 2 
+    
 def fibonacci(n):
-    global count2
-    f = [1] * (n + 1)
+    dp = [0] * (n + 1)
+    dp[1], dp[2] = 1, 1
     for i in range(3, n + 1):
-        count2 += 1
-        f[i] = f[i-1] + f[i-2]
-    return f[n]
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return dp[n]
 
-N = int(input())
-count2 = 0
-
-print(fibonacci(N), count2)
+n = int(input())
+print(fibonacci(n), fib(n))
+        
+    
+    
+    
+    
