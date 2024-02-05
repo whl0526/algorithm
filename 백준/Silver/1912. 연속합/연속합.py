@@ -1,6 +1,14 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-a = list(map(int, input().split()))
-sum = [a[0]]
-for i in range(len(a) - 1):
-    sum.append(max(sum[i] + a[i + 1], a[i + 1]))
-print(max(sum))
+num = list(map(int, input().split()))
+
+dp = [0] * n
+dp[0] = num[0]
+
+for i in range(1, n):
+    dp[i] = max(num[i], dp[i-1]+num[i])
+    
+print(max(dp))    
+    
